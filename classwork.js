@@ -1,3 +1,4 @@
+
 /*
 * Given the data segment "preview", create functions that satisfy the function
 * descriptions. There are a total of 4 functions in this file
@@ -38,21 +39,49 @@ var preview = {
 * 			string
 * Return 	isEnabled (string)
 */
-
+function accessKey (ha){
+	var isEnabled = ""
+	for (var key in ha){
+		if (key === "enabled"){
+		isEnabled += ha[key];	
+		console.log (typeof isEnabled);
+		}
+	}
+	return isEnabled;
+}
+console.log(accessKey(preview));
 /*
 * Function that changes the value from the key "enabled" to true, and returns 
 * the value from the key "enabled"
 *
 * Return 	value from key enabled (boolean)
 */
-
+function change (ba){
+	var bang = ""
+	for (var key in ba){
+		if (key === "enabled"){
+			enabled = true;
+		}
+	}
+	return enabled;
+}
+console.log(change(preview));
 /*
 * Function that retrieves the urls only from the key "resolutions" 
 * , stores the values in an array called "urls", and returns the created array
 * 
 * Return 	urls (array)
 */
-
+function ret (ur){
+	var urls = [""]
+	for (var key in ur){
+		if (key === "resolutions"){
+			return resolutions;
+		}
+	}
+	return urls;
+}
+console.log(ret(preview));
 /*
 * Function that retrieves the first nested key and value pairing
 * from the values of "images", stores them in a new object called 
