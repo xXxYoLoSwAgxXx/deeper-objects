@@ -72,15 +72,22 @@ console.log(change(preview));
 * 
 * Return 	urls (array)
 */
-function ret (ur){
-	var urls = [""]
-	for (var key in ur){
-		if (key === "resolutions"){
-			return resolutions;
+function ret (data){
+	var urls = [];
+	var dataResolutions = data.images[0].resolutions;
+	for (var i = 0; i < dataResolutions.length; i++){
+		console.log(dataResolutions[i]);
+		for (var key in dataResolutions[i]){
+			console.log(key);
+			if (key === "url"){
+				urls.push(dataResolutions[i][key])
+				console.log(urls);
+			}
 		}
 	}
-	return urls;
+	return urls
 }
+
 console.log(ret(preview));
 /*
 * Function that retrieves the first nested key and value pairing
